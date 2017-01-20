@@ -11,8 +11,13 @@ class PagesController < ApplicationController
   end
 
   def about
-	puts "came in about method"
-	@title = "About"
+	 puts "came in about method"
+  	@title = "About"
+  end
+
+  def help
+    puts "came in help method"
+    @title = "Help"
   end
 
 end
