@@ -26,6 +26,8 @@ class UsersController < ApplicationController
 			puts("*********************");
 			puts("*********************");
 			puts("*********************");
+
+			sign_in @user
 			flash[:success] = "Welcome to the Sample App!"
 			redirect_to @user
 		else
