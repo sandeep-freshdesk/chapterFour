@@ -40,8 +40,8 @@ class SessionsController < ApplicationController
 	  	puts "*************"
 	  	puts "*************"
 
-	  	#sign_in user
-		redirect_to user
+	  	sign_in user
+		redirect_back_or user
 	end
 
   end
