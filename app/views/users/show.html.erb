@@ -9,6 +9,7 @@
 		<td class="sidebar round">
 			<strong>Name</strong> <%= @user.name %><br />
 			<strong>URL</strong> <%= link_to user_url(@user), @user %>
+			<%= link_to "delete", user_url(@user), :method => 'delete', :title => "Delete #{@user.name}" %>
 		</td>
 	</tr>
 </table>
