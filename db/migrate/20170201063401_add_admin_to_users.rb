@@ -8,7 +8,7 @@ class AddAdminToUsers < ActiveRecord::Migration
   end
 	
   def self.down
-	remove_column :users, :admin
+	   remove_column :users, :admin
   end
 
 end
