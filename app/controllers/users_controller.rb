@@ -28,11 +28,7 @@ class UsersController < ApplicationController
 			puts("sign up sssuuccceesssssfffuuuulllll");
 			puts("*********************");
 			puts("*********************");
-			puts("*********************");
-			puts("*********************");
-			puts("*********************");
-			puts("*********************");
-
+		
 			sign_in @user
 			flash[:success] = "Welcome to the Sample App!"
 			redirect_to @user
@@ -45,10 +41,7 @@ class UsersController < ApplicationController
 			puts("sign up fail");
 			puts("*********************");
 			puts("*********************");
-			puts("*********************");
-			puts("*********************");
-			puts("*********************");
-			puts("*********************");
+		
 			@title = "Sign up"
 			render 'new'
 		end
@@ -79,6 +72,21 @@ class UsersController < ApplicationController
 		User.find(params[:id]).destroy
 		flash[:success] = "User destroyed."
 		redirect_to users_path
+	end
+
+
+	def following
+		@title = "Following"
+		@user = User.find(params[:id])
+		@users = @user.following.paginate(:page => params[:page])
+		render 'show_follow'
+	end
+
+	def followers
+		@title = "Followers"
+		@user = User.find(params[:id])
+		@users = @user.followers.paginate(:page => params[:page])
+		render 'show_follow'
 	end
 
 	private
